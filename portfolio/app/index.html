@@ -23,8 +23,35 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <nav id="mainnav" ng-controller="NavbarController">
+      <a href="#about" ng-class="{ active: isActive('/about')}">
+        <!-- <img src="css/img/amorris_logo.png" alt> -->
+        <span>about</span>
+      </a>
+      <span> / </span>
+      <a href="#skills" ng-class="{ active: isActive('/skills')}">
+        <span>skills</span>
+      </a>
+      <span> / </span>
+      <a href="#work" ng-class="{ active: isActive('/work')}">
+        <span>work</span>
+      </a>
+      <span> / </span>
+      <a href="#fun" ng-class="{ active: isActive('/fun')}">
+        <span>fun</span>
+      </a>
+      <span> / </span>
+      <a href="#contact" ng-class="{ active: isActive('/contact')}">
+        <span>contact</span>
+      </a>
+    </nav>
+
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="container">
+      <div class="starter-template">
+        <div ng-view></div>
+      </div>
+    </div><!-- /.container -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

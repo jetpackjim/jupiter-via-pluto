@@ -1,55 +1,95 @@
 /* Space out content a bit */
+@font-face {
+  font-family: "lane";
+  src:url("../fonts/LANENAR_-webfont.woff");
+}
+
+@font-face {
+  font-family: "open-sans";
+  src:url("../fonts/OpenSans-Regular-webfont.eot");
+  src:url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/OpenSans-Regular-webfont.woff") format("woff"),url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype"),url("../fonts/OpenSans-Regular-webfont.svg#open_sansregular") format("svg");
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: center;  
+  font-family: open-sans;
+  background: no-repeat scroll transparent;
+  background-color: #FFF;
+  /*background: blue;*/
+  /*background-color: #216189;*/
+  background-position: center 50px;
+  color: #394593;
+  background-image: url("../images/alienworld.png");
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+/* .header,
 .marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
-}
+} */
 
 /* Custom page header */
-.header {
+/* .header {
   border-bottom: 1px solid #e5e5e5;
+} */
+
+h1 {
+  /*background: lightblue;*/
+  font-family: lane;
+  font-size: 55px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  color: #9C5091;
 }
 /* Make the masthead heading the same height as the navigation */
-.header h3 {
+/* .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
-}
+} */
 
 /* Custom page footer */
-.footer {
+/* .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
-}
+} */
 
 /* Customize container */
-@media (min-width: 768px) {
+/* @media (min-width: 1024px) {
   .container {
-    max-width: 730px;
+    max-width: 1024px;
   }
+} */
+
+.copyright {
+    position: absolute;
+    border: 0px groove #aaaaaa;
+    /*background: lightblue;*/
+    width: 100%;
+    bottom: 0;
+    color: White;
+    text-align: center;
+    margin:auto;
+    
 }
+
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
+/* Main marketing message and sign up button
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
+  
+} */
 
 /* Supporting marketing content */
 .marketing {
@@ -59,21 +99,83 @@ body {
   margin-top: 28px;
 }
 
-/* Responsive: Portrait tablets and up */
+/* Responsive: Portrait tablets and up
 @media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
+  Remove the padding we set earlier
   .header,
   .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
+  Space out the masthead
   .header {
     margin-bottom: 30px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
+  Remove the bottom border on the jumbotron for visual effect
   .jumbotron {
     border-bottom: 0;
   }
+} */
+
+nav span {
+  color: #394593;
 }
+
+nav a span:hover {
+  color: #8995E3;
+}
+
+nav a {
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #F00;
+  text-decoration: none;
+}
+
+nav .active > span,
+nav .active > span:hover {
+  color: White;
+  background: #394593;
+  padding: 2px 5px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  display: inline-block;
+}
+
+.navbar .nav,
+.navbar .nav > li {
+  /*float:none;*/
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1;  /*hasLayout ie7 trigger */
+  vertical-align: baseline;
+}
+
+.navbar-inner {
+  text-align:center;
+}
+  
+.navbar{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+
+.navbutton {
+  transition: transform 1s;
+  font-family: open-sans;
+  font-variant: normal;
+  font-weight: normal;
+  width: 100px;
+  height: 40px;
+  background-color: #89CAEF;
+  text-align:center;
+  font-size: 13px;
+  margin: 1em;
+  color: black;
+  line-height: 26px;
+}
+
