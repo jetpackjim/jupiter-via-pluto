@@ -15,15 +15,25 @@ body {
   padding-bottom: 20px;
   text-align: center;  
   font-family: open-sans;
-  background: no-repeat scroll transparent;
-  background-color: #FFF;
+  /*background: no-repeat scroll transparent;
+  background-color: #FFF;*/
   /*background: blue;*/
   /*background-color: #216189;*/
-  background-position: center 50px;
+  /*background-position: center 50px;
   color: #394593;
-  background-image: url("../images/alienworld.png");
+  background-image: url("../images/sky.svg");
+  background-size: cover;*/
+  /*background-image: url("../images/alienworld.svg");*/
+  /*height:10000px;*/
 }
 
+svg { position:absolute; top:0px; bottom:0; left:0; right:0; z-index:0;}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-size: 768px;
+  }
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 /* .header,
 .marketing,

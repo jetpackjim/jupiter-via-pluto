@@ -16,6 +16,15 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <script src="bower_components/snap.svg/dist/snap.svg.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/svg.js"></script>
+    <script src="scripts/aboutpage.js"></script>
+    <script src="scripts/skillspage.js"></script>
+    <script src="scripts/workpage.js"></script>
+    <script src="scripts/funpage.js"></script>
+    <script src="scripts/contactpage.js"></script>
+
     <!-- endbuild -->
   </head>
   <body ng-app="portfolioApp">
@@ -23,35 +32,40 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <nav id="mainnav" ng-controller="NavbarController">
-      <a href="#about" ng-class="{ active: isActive('/about')}">
-        <!-- <img src="css/img/amorris_logo.png" alt> -->
+    
+
+    <!-- <nav id="mainnav" ng-controller="NavbarController">
+      <a id="aboutButton" href="#about" ng-class="{ active: isActive('/about')}">
         <span>about</span>
       </a>
       <span> / </span>
-      <a href="#skills" ng-class="{ active: isActive('/skills')}">
+      <a id="skillsButton" href="#skills" ng-class="{ active: isActive('/skills')}">
         <span>skills</span>
       </a>
       <span> / </span>
-      <a href="#work" ng-class="{ active: isActive('/work')}">
+      <a id="workButton" href="#work" ng-class="{ active: isActive('/work')}">
         <span>work</span>
       </a>
       <span> / </span>
-      <a href="#fun" ng-class="{ active: isActive('/fun')}">
+      <a id="funButton" href="#fun" ng-class="{ active: isActive('/fun')}">
         <span>fun</span>
       </a>
       <span> / </span>
-      <a href="#contact" ng-class="{ active: isActive('/contact')}">
+      <a id="contactButton" href="#contact" ng-class="{ active: isActive('/contact')}">
         <span>contact</span>
       </a>
-    </nav>
+    </nav> -->
+
+
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="starter-template">
         <div ng-view></div>
       </div>
-    </div><!-- /.container -->
+    <!-- </div> -->
+
+    <script src="scripts/alienworld.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -78,6 +92,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/snap.svg/dist/snap.svg.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -85,5 +100,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
+
+        <script src="scripts/snaptut.js"></script>
 </body>
 </html>
