@@ -24,6 +24,11 @@ function AboutPage() {
     g = contentgroup;
     var all = f.select("#aboutpage");
 
+    all.attr({
+      width:100,
+      height:100
+    });
+
     displayTitle(all);
 
     cloud1 = all.select("#cloud1");
@@ -113,15 +118,15 @@ function AboutPage() {
     var text = g.text(140+1500, 1150, "ANDREW MORRIS");
       text.attr({
           'font-family': 'lane',
-          'font-size':62,
+          'font-size': '62px',
           'font-weight':'normal',
           'fill': '#2C3775'
       });
 
-      text = g.text(270+1500, 1170, "web,app and game developer");
+      text = g.text(270+1500, 1170, "web, app and game developer");
       text.attr({
           'font-family': 'lane',
-          'font-size':17,
+          'font-size':'17px',
           'font-weight':'normal',
           'fill': '#2C3775'
       });
@@ -140,7 +145,7 @@ function AboutPage() {
       {
         angle = 60;
       }
-      tree1.animate({ transform: 'r ' + angle + ',223,414' }, 200, resetToOriginTree1 ); 
+      tree1.animate({ transform: 'r ' + angle + ',1598,1535' }, 200, resetToOriginTree1 ); 
 
       setTimeout( hovertree1Timeout, 200 );
     }
@@ -151,7 +156,7 @@ function AboutPage() {
   }
 
   var resetToOriginTree1 = function() { 
-    resetToOrigin(tree1);
+    tree1.animate({ transform: 'r 0,1598,1535' }, 400, mina.bounce ); 
   };
   var hoveringTree2 = false;
   var hoverovertree2 = function() {
@@ -166,7 +171,7 @@ function AboutPage() {
       {
         angle = 60;
       }
-      tree2.animate({ transform: 'r ' + angle + ',939,456' }, 200, resetToOriginTree2 ); 
+      tree2.animate({ transform: 'r ' + angle + ',2100,1564' }, 200, resetToOriginTree2 ); 
 
       setTimeout( hovertree2Timeout, 200 );
     }
@@ -176,7 +181,7 @@ function AboutPage() {
     hoveringTree2 = false;
   }
   var resetToOriginTree2 = function() { 
-    resetToOrigin(tree2);
+    tree2.animate({ transform: 'r 0,2100,1564' }, 400, mina.bounce );
   };
   var hoveringTree3 = false;
   var hoverovertree3 = function() {
@@ -191,7 +196,7 @@ function AboutPage() {
       {
         angle = 60;
       }
-      tree3.animate({ transform: 'r ' + angle + ',570,429' }, 200, resetToOriginTree3 ); 
+      tree3.animate({ transform: 'r ' + angle + ',1841,1545' }, 200, resetToOriginTree3 ); 
 
       setTimeout( hovertree3Timeout, 200 );
     }
@@ -201,20 +206,19 @@ function AboutPage() {
     hoveringTree3 = false;
   }
   var resetToOriginTree3 = function() { 
-    resetToOrigin(tree3);
+    tree3.animate({ transform: 'r 0,1841,1545' }, 400, mina.bounce ); 
   };
   var hoveringTree4 = false;
   var hoverovertree4 = function() {
     if ( hoveringTree4 == false )
     {
       hoveringTree4 = true;
-      var angle = -60;
-
+      var angle = -60
       if ( mouseDirFromLeft == true )
       {
         angle = 60;
       }
-      tree4.animate({ transform: 'r ' + angle + ',323,476' }, 200, resetToOriginTree4 );
+      tree4.animate({ transform: 'r ' + angle + ',1668,1578' }, 200, resetToOriginTree4 );
       setTimeout( hovertree4Timeout, 200 );
     }
   };
@@ -222,7 +226,7 @@ function AboutPage() {
     hoveringTree4 = false;
   }
   var resetToOriginTree4 = function() { 
-    resetToOrigin(tree4);
+    tree4.animate({ transform: 'r 0,1668,1578' }, 400, mina.bounce );
   };
   var hoveroverb1 = function() {
     duck(b1, resetToOriginb1);
@@ -265,9 +269,9 @@ function AboutPage() {
       duck(hairdown, null);
       duck(hairup, null);
       duck(tractorbeam, null);
-      tractorbeam.attr({display:""});
-      hairdown.attr({display:"none"});
-      hairup.attr({display:""});
+      tractorbeam.attr({opacity:1});
+      hairdown.attr({opacity:0});
+      hairup.attr({opacity:1});
     }
   };
   var resetToOriginsship = function() { 
@@ -284,8 +288,8 @@ function AboutPage() {
 
   var resethair = function()
   {
-    hairdown.attr({display:""});
-    hairup.attr({display:"none"});
+    hairdown.attr({opacity:1});
+    hairup.attr({opacity:0});
   }
 
   var mouseoutsship = function() {
@@ -300,7 +304,7 @@ function AboutPage() {
   };
 
   var tractorbeamalien = function() {
-    alien.animate({ transform: 's0.6t0,-280' }, 2000, null );
+    alien.animate({ transform: 't0,-150' }, 1500, null );
   };
 
   var hoveroveralien = function() {
@@ -349,7 +353,7 @@ function AboutPage() {
   };
 
   var endtractorbeam = function() {
-    tractorbeam.attr({display:"none"});
+    tractorbeam.attr({opacity:0});
   };
 
   var mX = 0;

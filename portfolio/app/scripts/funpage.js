@@ -36,7 +36,10 @@ function FunPage() {
     //   });
   }
 
-  
+  this.deactivate = function()
+  {
+  }
+
 
   $('body').mousemove(function(e) {
 

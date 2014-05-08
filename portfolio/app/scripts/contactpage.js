@@ -10,6 +10,15 @@ function ContactPage() {
   var emailing = false;
   var satbeacon = null;
   var emailhide = null;
+  var freeing = false;
+  var numberofstars = 14;
+  var stars = [];
+
+  var sship = null;
+  var me = null;
+  var tractorbeam = null;
+  var hairup = null;
+  var hairdown = null;
 
   this.setup = function(f, contentgroup) {
 
@@ -19,6 +28,16 @@ function ContactPage() {
     var night = all.select("#night");
     g.append(night);
 
+    for ( var i=0; i<numberofstars; i++ )
+    {
+      var allstars = all.select("#stars");
+      var starid = "#star" + (i+1);
+      stars[i] = allstars.select(starid);
+      g.append(stars[i]);
+      var funcname = 'hoveroverstar' + (i+1);
+      stars[i].hover(hoveroverstar,null);
+    }
+
     displayText(all);
 
     emailhide = all.select("#texthide");
@@ -27,6 +46,21 @@ function ContactPage() {
     sat = all.select("#satellite");
     g.append( sat );
     sat.hover(hoveroversat, null); 
+
+    for ( var i=0; i<4; i++ )
+    {
+      var panelid = '#panel' + (i+1);
+      var panel = sat.select(panelid);
+      for ( var j=0; j<9; j++ )
+      {
+        var psquareid = '#p' + (i+1) + 's' + (j+1);
+        var psquare = panel.select(psquareid);
+        g.append(psquare);
+        //console.log(psquareid);
+        psquare.attr({ opacity:'0'});
+        psquare.hover(hoveroverpanel,null);
+      }
+    }
 
     satbeacon = all.select("#satbeacon");
     g.append( satbeacon );
@@ -56,10 +90,31 @@ function ContactPage() {
     }
   }
 
+  var hoveroverpanel = function()
+  {
+    this.attr({ opacity:'1'});
+    this.animate({ opacity:'0'}, 1000, mina.easeout);
+  }
+
+  var hoveroverstar = function()
+  {
+    var x = 1000;
+    var y = Math.random() * 100;
+    this.animate({ transform:'t' + x + ',' + y}, 200, mina.easeout);
+    this.animate({ opacity:'0'}, 500, mina.easeout, reappearstar);
+  }
+
+  var reappearstar = function()
+  {
+    this.attr({ transform:'t0,0'});
+    this.animate({ opacity:'1'}, 5000, mina.easeout);
+  }
+
   var hoveroversship = function()
   {
-    if ( emailing )
+    if ( emailing && freeing == false)
     {
+      freeing = true;
       freeemail();
     }
   }
@@ -71,7 +126,7 @@ function ContactPage() {
     emailtext = g.text(100+1500, 387, "amorris.home@gmail.com");
       emailtext.attr({
           'font-family': 'lane',
-          'font-size':17,
+          'font-size':'17px',
           'font-weight':'normal',
           'fill': '#FFF'
       });
@@ -92,17 +147,11 @@ function ContactPage() {
       hairdown.stop();
       tractorbeam.stop();
 
-      // sship.attr({ transform:'t200,-1100'});
-      // me.attr({ transform:'t200,-1100'});
-      // hairup.attr({ transform:'t200,-1100'});
-      // hairdown.attr({ transform:'t200,-1100'});
-      // tractorbeam.attr({ transform:'t200,-1100'});
-
-      sship.animate({ transform:'t200,-976'}, 500, mina.bounce);
-      me.animate({ transform:'t200,-976'}, 500, mina.bounce);
-      hairup.animate({ transform:'t200,-976'}, 500, mina.bounce);
-      hairdown.animate({ transform:'t200,-976'}, 500, mina.bounce);
-      tractorbeam.animate({ transform:'t200,-976'}, 500, mina.bounce);
+      sship.animate({ transform:'t200,-976'}, 500, mina.easeinout);
+      me.animate({ transform:'t200,-976'}, 500, mina.easeinout);
+      hairup.animate({ transform:'t200,-976'}, 500, mina.easeinout);
+      hairdown.animate({ transform:'t200,-976'}, 500, mina.easeinout);
+      tractorbeam.animate({ transform:'t200,-976'}, 500, mina.easeinout);
 
       satbeacon.attr({display:""});
       setTimeout( beaconoff, 200 );
@@ -129,17 +178,18 @@ function ContactPage() {
   {
     emailtext.animate({ transform:'t1500,0'}, 500, mina.easeout, resetemail);
 
-    sship.animate({ transform:'t200,-1100'}, 500, mina.bounce);
-    me.animate({ transform:'t200,-1100'}, 500, mina.bounce);
-    hairup.animate({ transform:'t200,-1100'}, 500, mina.bounce);
-    hairdown.animate({ transform:'t200,-1100'}, 500, mina.bounce);
-    tractorbeam.animate({ transform:'t200,-1100'}, 500, mina.bounce);
+    sship.animate({ transform:'t200,-1100'}, 500, mina.easeinout);
+    me.animate({ transform:'t200,-1100'}, 500, mina.easeinout);
+    hairup.animate({ transform:'t200,-1100'}, 500, mina.easeinout);
+    hairdown.animate({ transform:'t200,-1100'}, 500, mina.easeinout);
+    tractorbeam.animate({ transform:'t200,-1100'}, 500, mina.easeinout);
   }
 
   var resetemail = function()
   {
     emailtext.attr({ transform:'t0,0'});
     emailing = false;
+    freeing = false;
   }
 
   $('body').mousemove(function(e) {

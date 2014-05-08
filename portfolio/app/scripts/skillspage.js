@@ -12,8 +12,8 @@ function SkillsPage() {
     g = contentgroup;
     var all = f.select("#skillspage");
 
-    sat = all.select("#sground");
-    g.append( sat ); 
+    //sat = all.select("#sground");
+    g.append( all ); 
     //tree1.hover( hoverovertree1, null );
   }
 
@@ -36,7 +36,9 @@ function SkillsPage() {
     //   });
   }
 
-  
+  this.deactivate = function()
+  {
+  }
 
   $('body').mousemove(function(e) {
 

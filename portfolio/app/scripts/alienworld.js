@@ -1,4 +1,5 @@
 var currentButtonSelected = null;
+var previousButtonSelected = null;
 
 function getScalarFromRange(min, max, value)
 {
@@ -61,6 +62,7 @@ function Button(name, xpos, navbar, navgroup, pagexpos, pageypos, contentgroup, 
   {
     currentButtonSelected.highlight(false);
     buttonOnEle.attr({display:""});
+    previousButtonSelected = currentButtonSelected;
     currentButtonSelected = thisObj;
     buttonTextEle.attr({
         'fill': '#FFF'
@@ -80,7 +82,7 @@ function Button(name, xpos, navbar, navgroup, pagexpos, pageypos, contentgroup, 
     }
     
     var ypos = currentButtonSelected.pageypos;
-    var x = currentButtonSelected.pagexpos + 100*(scalar*8.3);
+    var x = currentButtonSelected.pagexpos;
 
     var tranformString = 't' + x + ',' + ypos;
     // // your code
@@ -145,7 +147,7 @@ function Button(name, xpos, navbar, navgroup, pagexpos, pageypos, contentgroup, 
   buttonTextEle = navgroup.text(xpos, 29, name.toUpperCase());
     buttonTextEle.attr({
         'font-family': 'lane',
-        'font-size':14,
+        'font-size':'14px',
         'font-weight':'normal',
         'fill': '#2C3775'
     });
@@ -158,7 +160,7 @@ function Button(name, xpos, navbar, navgroup, pagexpos, pageypos, contentgroup, 
 $(function(){
 
   var initialised = false;
-  var s = Snap(); 
+  var s = Snap("#svg1"); 
   var contentgroup = s.group();
   var navgroup = s.group();
   var mX = 0;
@@ -172,6 +174,9 @@ $(function(){
 
   var aboutpage = null;
   var contactpage = null;
+  var skillspage = null;
+  var workpage = null;
+  var funpage = null;
 
   // global svg objects
   var sship = null;
@@ -180,20 +185,20 @@ $(function(){
   var hairdown = null;
 
 
-  Snap.load("images/alienworld.svg", function ( f ) {  
+  var page = Snap.load("images/alienworld.svg", function ( f ) {  
 
     setupNavBar(f);
     aboutpage = new AboutPage();
     aboutpage.setup(f, contentgroup);  
 
-    var skillspage = new SkillsPage();
-    skillspage.setup(f, contentgroup);
+    /*skillspage = new SkillsPage();
+    skillspage.setup(f, contentgroup);*/
 
-    var workpage = new WorkPage();
+    workpage = new WorkPage();
     workpage.setup(f, contentgroup);
 
-    var funpage = new FunPage();
-    funpage.setup(f, contentgroup);
+    /*funpage = new FunPage();
+    funpage.setup(f, contentgroup);*/
     
     contactpage = new ContactPage();
     contactpage.setup(f, contentgroup);
@@ -202,7 +207,7 @@ $(function(){
 
     tractorbeam = all.select("#tractorbeam");                      
     contentgroup.append( tractorbeam ); 
-    tractorbeam.attr({display:"none"});
+    tractorbeam.attr({opacity:0});
 
     sship = all.select("#sship");
     contentgroup.append( sship ); 
@@ -213,16 +218,18 @@ $(function(){
     contentgroup.append(hairup);
     hairdown = me.select("#hairdown");
     contentgroup.append(hairdown);
-    hairup.attr({display:"none"});
+    hairup.attr({opacity:0});
 
 
     aboutpage.setupGlobalSVGObjects( sship, me, hairup, hairdown, tractorbeam );
     contactpage.setupGlobalSVGObjects( sship, me, hairup, hairdown, tractorbeam );
+    workpage.setupGlobalSVGObjects( sship, me, hairup, hairdown, tractorbeam );
 
     initialised = true;
     resizeAlienworld();
   } );  
 
+  
   window.onresize = function() {
 
     if ( initialised == true )
@@ -248,7 +255,7 @@ $(function(){
       }
       
       var ypos = currentButtonSelected.pageypos;
-      var x = currentButtonSelected.pagexpos + 100*(scalar*8.3);
+      var x = currentButtonSelected.pagexpos /*+ 100*(scalar*8.3)*/;
 
       var tranformString = 't' + x + ',' + ypos;
 
@@ -256,10 +263,10 @@ $(function(){
       contentgroup.attr({transform: tranformString});
 
 
-      x = -800 + 100*(scalar*8.3);
+      x = -200;
       navgroup.attr({transform: 't'+ x + ',0'});
 
-      console.log("scalar: " + scalar + " ypos: " + ypos);
+      //console.log("scalar: " + scalar + " ypos: " + ypos);
   }
 
   var setupNavBar = function(f) {
@@ -267,14 +274,14 @@ $(function(){
     var text = f.select("#text");
     navbar = text.select("#nav");
 
-    aboutButton = new Button( "about", 446, navbar, navgroup, -2050, -1000, contentgroup, onclickbuttoncallback );
+    aboutButton = new Button( "about", 523, navbar, navgroup, -1450, -1000, contentgroup, onclickbuttoncallback );
     aboutButton.highlight(true);
     
     // ypos should be 0 when on skills page why isn't it?
-    skillsButton = new Button( "skills", 529, navbar, navgroup, -500, -1000, contentgroup, onclickbuttoncallback );
-    workButton = new Button( "work", 609, navbar, navgroup, -3700, -1000, contentgroup, onclickbuttoncallback );
-    funButton = new Button( "fun", 687, navbar, navgroup, -2050, -2200, contentgroup, onclickbuttoncallback );
-    contactButton = new Button( "contact", 750, navbar, navgroup, -2050, 0, contentgroup, onclickbuttoncallback );
+    //skillsButton = new Button( "skills", 529, navbar, navgroup, -50, -1000, contentgroup, onclickbuttoncallback );
+    workButton = new Button( "work", 609, navbar, navgroup, -3040, -1000, contentgroup, onclickbuttoncallback );
+    //funButton = new Button( "fun", 687, navbar, navgroup, -1450, -2200, contentgroup, onclickbuttoncallback );
+    contactButton = new Button( "contact", 688, navbar, navgroup, -1450, 0, contentgroup, onclickbuttoncallback );
     currentButtonSelected = aboutButton;
     navgroup.attr({transform: 's0.7'});
   }
@@ -282,28 +289,53 @@ $(function(){
   var turnOffNightMenu = function()
   {
     aboutButton.nightmenu(false);
-    skillsButton.nightmenu(false);
+    // skillsButton.nightmenu(false);
     workButton.nightmenu(false);
-    funButton.nightmenu(false);
+    // funButton.nightmenu(false);
+  }
+
+  var deactivatePreviousPage = function()
+  {
+    if ( previousButtonSelected.name == "about" )
+    {
+      aboutpage.deactivate();
+    }
+    else if ( previousButtonSelected.name == "skills" )
+    {
+      skillspage.deactivate();
+    }
+    else if ( previousButtonSelected.name == "work" )
+    {
+      workpage.deactivate();
+    }
+    else if ( previousButtonSelected.name == "fun" )
+    {
+      funpage.deactivate();;
+    }
+    else if ( previousButtonSelected.name == "contact" )
+    {
+      contactpage.deactivate();
+    }
   }
 
   var onclickbuttoncallback = function() {
 
+    deactivatePreviousPage();
+
     if ( currentButtonSelected.name == "about" )
     {
-      contactpage.deactivate();
-      aboutpage.setSpaceShipPos(0,0);
+      aboutpage.setSpaceShipPos(0,0,1.0);
       turnOffNightMenu();
       aboutpage.activate();
     }
     else if ( currentButtonSelected.name == "skills" )
     {
-      aboutpage.setSpaceShipPos(-1500,0);
+      aboutpage.setSpaceShipPos(-1750,-70);
       turnOffNightMenu();
     }
     else if ( currentButtonSelected.name == "work" )
     {
-      aboutpage.setSpaceShipPos(1500,0);
+      workpage.setSpaceShipPos(1245,-50);
       turnOffNightMenu();
     }
     else if ( currentButtonSelected.name == "fun" )
@@ -313,12 +345,11 @@ $(function(){
     }
     else if ( currentButtonSelected.name == "contact" )
     {
-      aboutpage.setSpaceShipPos(200,-1100);
-      aboutpage.deactivate();
+      aboutpage.setSpaceShipPos(200,-1100,1.0);
       aboutButton.nightmenu(true);
-      skillsButton.nightmenu(true);
+      // skillsButton.nightmenu(true);
       workButton.nightmenu(true);
-      funButton.nightmenu(true)
+      // funButton.nightmenu(true)
 
       contactpage.activate();
     }
