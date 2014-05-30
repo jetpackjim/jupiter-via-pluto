@@ -1,0 +1,524 @@
+/* Space out content a bit */
+body {
+  /*padding-top: 20px;
+  padding-bottom: 20px;*/
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  background-image: -webkit-linear-gradient(top, #333 0%, #000 100%);
+  background-image: linear-gradient(to bottom, #333 0%, #000 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#000000', GradientType=0);
+  border-bottom: 1px solid #e5e5e5;
+  /*margin-top: 0;*/
+  /*margin-bottom: 0;*/
+  height: 60px;
+  /*line-height: 40px;*/
+  /*padding-bottom: 19px;*/
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  font-family: 'Lato', sans-serif;
+  color:#bbb;
+  font-size:24px;
+
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 50px;
+}
+
+/* Custom page footer */
+.footer {
+  position: fixed;
+  font-size:10px;
+  padding-top: 19px;
+  color: #777;
+  float: right;
+  right:10px;
+ /* border-top: 1px solid #e5e5e5;*/
+  bottom:0px;
+}
+
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    /* max-width: 730px; */
+  }
+}
+.container-narrow > hr {
+  /* margin: 30px 0; */
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  background-color: white;
+  height: 512px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/*.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}*/
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+.nav {
+  margin-right:10px;
+  height: 60px;
+}
+
+.nav li {
+  display:inline-block;
+  height:100%;
+}
+
+.nav > li > a {
+  font-family: 'Lato', sans-serif;
+  color:#bbb;
+  font-size:13px;
+
+  line-height:30px;
+  height: 60px;
+  padding: 10px 10px;
+}
+
+.nav > li > a.active,
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color:#555;
+  background-color: transparent;
+}
+
+.page        { 
+    bottom:0; 
+    padding-top:10px;
+    position:absolute;
+    text-align:center;
+    top:70px;  
+  }
+
+.workpage {
+
+}
+
+.desc {
+
+  color: #000;
+}
+
+#developer, #aboutme, #work {
+  margin-top: 20px;
+  float: left;
+  text-align: left;
+  left: 0;
+}
+
+.companybreak {
+  display:block;
+
+  padding: 5px 10px 5px 20px;
+  background-color: #EEE;
+}
+
+#coder {
+  margin-top: 200px;
+  float: right;
+  text-align: right;
+  right: 0;
+}
+
+.desc h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size:4.5rem;
+}
+
+.desc h2 {
+  font-family: 'Lato', sans-serif;
+  color: #777;
+  font-weight: normal;
+  font-size:1.5rem;
+}
+
+.desc h4 {
+  font-family: 'Lato', sans-serif;
+  color: #777;
+  font-weight: bold;
+  font-size:1.5rem;
+}
+
+.desc p {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  font-size:1.2rem;
+  color: #777;
+}
+
+.thumbs {
+  text-align: center;
+  list-style: none;
+  /*position: relative;*/
+  padding: 0;
+  margin-top:20px;
+}
+
+.thumbs li {
+  -moz-box-shadow: 0px 0px 5px 1px #bbb;
+  -webkit-box-shadow: 0px 0px 5px 1px #bbb;
+  box-shadow: 0px 0px 5px 1px #bbb;
+  display:inline-block;
+  /*float: center;*/
+  width:auto;
+  height:210px;
+  /*width: 30.1923076923%;*/
+  margin: 0 2% 2% 0;
+  background: #EEE;
+  padding: .7% .3% .7% .3%;
+  overflow: hidden;
+}
+
+.thumbs li img {
+  height:100%;
+/*  max-width: 100%;
+  max-height: 100%;*/
+  min-height: 100%;
+  width: auto;
+}
+
+.thumbs li.directimage {
+    padding: .7% .7% .7% .7%;
+}
+
+
+/* large screens */
+@media (min-width: 518px) {
+
+  #mobileheader {
+    display: none;
+  }
+  .jumbotron {
+    background-image: url("../images/me2.png");
+    background-repeat: no-repeat;
+    background-position:center;
+  }
+
+  .page        {  
+    width:730px;
+  }
+
+  .homedesc .desc {
+    display:inline-block;
+    width: 25%;
+  }
+
+  .desc {
+    display:inline-block;
+  }
+
+
+  .nav-pos {
+    float: right !important;
+  }
+
+}
+
+/* small screens */
+@media (max-width: 518px) {
+
+  #mobileheader {
+    display: block;
+  }
+
+  .jumbotron {
+    background-image: url("../images/me2.png");
+    background-repeat: no-repeat;
+    background-position:top center;
+    background-size: 50%;
+    text-align: center;
+  }
+
+  .homedesc {
+    text-align: center;
+  }
+
+  #developer {
+    float: center;
+    text-align: center;
+    width:50%;
+    margin: auto;
+    margin-top: 180px;
+  }
+
+  #aboutme, #work {
+    float: center;
+    text-align: center;
+    width:60%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  #coder {
+    margin: auto;
+    margin-top: 20px;
+    float: center;
+    text-align: center;
+    width:50%;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .nav > li > a {
+
+    padding: 10px 2px;
+  }
+
+  .nav-pos {
+    text-align: center;
+    /*float: center !important;*/
+  }
+
+  .thumbs {
+    text-align: center;
+  }
+
+  .thumbs li {
+    display:block;
+    /*float: center;*/
+    width:210px;
+    height:210px;
+    /*width: 30.1923076923%;*/
+    margin: 20px auto auto auto;
+    background: #EEE;
+    padding: 2% 2% 2% 2%;
+    overflow: hidden;
+  }
+
+  .aboutimage {
+    width: 80%;
+  }
+}
+
+/* make our pages be full width and full height */
+/* positioned absolutely so that the pages can overlap each other as they enter and leave */
+/*html         { overflow-y:hidden; }*/
+
+/*.page h1  { font-size:60px; }
+.page a     { margin-top:10px; }*/
+/*#about      { color:#333; position:absolute; text-align:center; top:50px; width:100%; }*/
+
+/* PAGES
+============================================================================= */
+/*.page-home    { background:#00D0BC; color:#00907c; }
+.page-about   { background:#E59400; color:#a55400; }
+.page-contact   { background:#ffa6bb; color:#9e0000; }*/
+
+/* ANIMATIONS
+============================================================================= */
+
+.page.ng-leave  { z-index:9999; }
+.page.ng-enter  { z-index:8888; }
+
+/* page specific animations ------------------------ */
+
+/* home -------------------------- */
+.page-home.ng-leave         {
+  -webkit-animation: slideOutLeft 0.5s both ease-in;
+  -moz-animation: slideOutLeft 0.5s both ease-in;
+  animation: slideOutLeft 0.5s both ease-in;
+}
+.page-home.ng-enter     {  
+  webkit-animation:fadeIn 0.5s both ease-in;
+  -moz-animation:fadeIn 0.5s both ease-in;
+  animation:fadeIn 0.5s both ease-in;
+}
+
+/* about ------------------------ */
+.page-about.ng-leave        {
+  -webkit-animation:slideOutLeft 0.5s both ease-in;
+  -moz-animation:slideOutLeft 0.5s both ease-in;
+  animation:slideOutLeft 0.5s both ease-in;   
+}
+.page-about.ng-enter    {  
+  -webkit-animation:slideInRight 0.5s both ease-in;
+  -moz-animation:slideInRight 0.5s both ease-in;
+  animation:slideInRight 0.5s both ease-in;    
+}
+
+/* work ------------------------ */
+.page-work.ng-leave        {
+  -webkit-animation:slideOutLeft 0.5s both ease-in;
+  -moz-animation:slideOutLeft 0.5s both ease-in;
+  animation:slideOutLeft 0.5s both ease-in;   
+}
+.page-work.ng-enter    {  
+  -webkit-animation:slideInRight 0.5s both ease-in;
+  -moz-animation:slideInRight 0.5s both ease-in;
+  animation:slideInRight 0.5s both ease-in;    
+}
+
+/* skills ------------------------ */
+.page-skills.ng-leave        {
+  -webkit-animation:slideOutLeft 0.5s both ease-in;
+  -moz-animation:slideOutLeft 0.5s both ease-in;
+  animation:slideOutLeft 0.5s both ease-in;   
+}
+.page-skills.ng-enter    {  
+  -webkit-animation:slideInRight 0.5s both ease-in;
+  -moz-animation:slideInRight 0.5s both ease-in;
+  animation:slideInRight 0.5s both ease-in;    
+}
+
+/* contact ---------------------- */
+.page-contact.ng-leave        {
+  -webkit-animation:slideOutLeft 0.5s both ease-in;
+  -moz-animation:slideOutLeft 0.5s both ease-in;
+  animation:slideOutLeft 0.5s both ease-in;   
+}
+.page-contact.ng-enter    {  
+  -webkit-animation:slideInRight 0.5s both ease-in;
+  -moz-animation:slideInRight 0.5s both ease-in;
+  animation:slideInRight 0.5s both ease-in;    
+}
+
+/* rotate and fall */
+@-webkit-keyframes rotateFall {
+  0% { -webkit-transform: rotateZ(0deg); }
+  20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
+  40% { -webkit-transform: rotateZ(17deg); }
+  60% { -webkit-transform: rotateZ(16deg); }
+  100% { -webkit-transform: translateY(100%) rotateZ(17deg); }
+}
+@-moz-keyframes rotateFall {
+  0% { -moz-transform: rotateZ(0deg); }
+  20% { -moz-transform: rotateZ(10deg); -moz-animation-timing-function: ease-out; }
+  40% { -moz-transform: rotateZ(17deg); }
+  60% { -moz-transform: rotateZ(16deg); }
+  100% { -moz-transform: translateY(100%) rotateZ(17deg); }
+}
+@keyframes rotateFall {
+  0% { transform: rotateZ(0deg); }
+  20% { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+  40% { transform: rotateZ(17deg); }
+  60% { transform: rotateZ(16deg); }
+  100% { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* fade in */
+@keyframes fadeIn {
+  from    { opacity: 0.3; }
+}
+@-moz-keyframes fadeIn {
+  from    { opacity: 0.3; }
+}
+@-webkit-keyframes fadeIn {
+  from    { opacity: 0.3; }
+}
+
+/* scale up */
+@keyframes scaleUp {
+  from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+@-moz-keyframes scaleUp {
+  from    { opacity: 0.3; -moz-transform: scale(0.8); }
+}
+@-webkit-keyframes scaleUp {
+  from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from  { opacity: 0.0; transform:translateX(100%); }
+  to    { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+  from  { opacity: 0.0; -moz-transform:translateX(100%); }
+  to    { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+  from  { opacity: 0.0; -webkit-transform:translateX(100%); }
+  to    { -webkit-transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+  from  { opacity: 0.0; transform:translateY(100%); }
+  to    { transform: translateY(0); }
+}
+@-moz-keyframes slideInUp {
+  from  { opacity: 0.0; -moz-transform:translateY(100%); }
+  to    { -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInUp {
+  from  { opacity: 0.0; -webkit-transform:translateY(100%); }
+  to    { -webkit-transform: translateY(0); }
+}
+
+/* slide in from the top */
+@keyframes slideInDown {
+  from  { opacity: 0.0; transform:translateY(-100%); }
+  to    { transform: translateY(0); }
+}
+@-moz-keyframes slideInDown {
+  from  { opacity: 0.0; -moz-transform:translateY(-100%); }
+  to    { -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInDown {
+  from  { opacity: 0.0; -webkit-transform:translateY(-100%); }
+  to    { -webkit-transform: translateY(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutUp {
+  to    { opacity: 0.0; transform: translateY(-100%); }
+}
+@-moz-keyframes slideOutUp {  
+  to    { opacity: 0.0; -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes slideOutUp {
+  to    { opacity: 0.0; -webkit-transform: translateY(-100%); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+  to    { opacity: 0.0; transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {  
+  to    { opacity: 0.0; -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+  to    { opacity: 0.0; -webkit-transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@-webkit-keyframes rotateOutNewspaper {
+  to { opacity: 0.3; -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@-moz-keyframes rotateOutNewspaper {
+  to { opacity: 0.3; -moz-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@keyframes rotateOutNewspaper {
+  to { opacity: 0.3; transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+
+
