@@ -17,70 +17,93 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="scripts/responsivemobilemenu/rmm-css/responsivemobilemenu.css" type="text/css"/>
     <!-- endbuild -->
   </head>
   <body ng-app="portfolioBasicApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
 
-    <div class="header" ng-controller="headerController">
-      <ul class="nav nav-pos">
-        <!-- <li class="active"><a ng-href="#">home</a></li> -->
-        <li><a ng-href="#" ng-class="{ active: isActive('/')}">home</a></li>
-        <li><a ng-href="#about" ng-class="{ active: isActive('/about')}">about</a></li>
-        <li><a ng-href="#work" ng-class="{ active: isActive('/work')}">work</a></li>
-        <li><a ng-href="#skills" ng-class="{ active: isActive('/skills')}">skills</a></li>
-        <li><a ng-href="#contact" ng-class="{ active: isActive('/contact')}">contact</a></li>
-      </ul>
-      <h3 class="title">Andrew Morris</h3>
-    </div>
+      <div class="header smallhdr rmm" data-menu-title="Andrew Morris" data-menu-style="graphite" ng-controller="headerController">
+        <!-- <img src="./images/mylogo.png" class="myicon" style="float: left; margin-left: 20px;"> -->
+        <ul class="nav nav-pos">
+          <li class="smallheader">
+                        
+          </li>
+          <li><a ng-href="#" ng-class="{ active: isActive('/')}">home</a></li>
+          <li><a ng-href="#about" ng-class="{ active: isActive('/about')}">about</a></li>
+          <li><a ng-href="#work" ng-class="{ active: isActive('/work')}">work</a></li>
+          <li><a ng-href="#skills" ng-class="{ active: isActive('/skills')}">skills</a></li>
+          <li><a ng-href="#contact" ng-class="{ active: isActive('/contact')}">contact</a></li>
+        </ul>
+      </div>
 
-    <!-- Add your site or application content here -->
-    <div class="container">
+      <div class="header largehdr" ng-controller="headerController">
+        <ul class="nav nav-pos">
+          <li><a ng-href="#" ng-class="{ active: isActive('/')}">home</a></li>
+          <li><a ng-href="#about" ng-class="{ active: isActive('/about')}">about</a></li>
+          <li><a ng-href="#work" ng-class="{ active: isActive('/work')}">work</a></li>
+          <li><a ng-href="#skills" ng-class="{ active: isActive('/skills')}">skills</a></li>
+          <li><a ng-href="#contact" ng-class="{ active: isActive('/contact')}">contact</a></li>
+        </ul>
+        <img src="./images/mylogo.png" class="myicon">
+        <h3 class="title">Andrew Morris</h3>
+      </div>
+
+      <div id="mainbody">
+        <div id="innerbody">
       <!-- Add your site or application content here -->
-      <div class="page {{ pageClass }} page-home" ng-view>
+      <!-- <div class="container"> -->
+        <!-- Add your site or application content here -->
+        <!-- <div id="pagecontainer" class="page {{ pageClass }}" ng-view>
+        </div> -->
+          <div id="pagecontainer" ng-view class="page-view" anim-class class="view"> 
+          </div>
       </div>
     </div>
 
-    <div class="footer">
-      <p>&#169 2014 Andrew Morris</p>
-    </div>
+      <div class="footer">
+        <p>&#169 2014 Andrew Morris</p>
+      </div>
 
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+       <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+         ga('create', 'UA-XXXXX-X');
+         ga('send', 'pageview');
+      </script>
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+      <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+      <!-- build:js scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+          <!-- build:js({.tmp,app}) scripts/scripts.js -->
+          <script src="scripts/app.js"></script>
+          <script src="scripts/controllers/main.js"></script>
+          <!-- endbuild -->
+
+      <script type="text/javascript" src="scripts/responsivemobilemenu/rmm-js/responsivemobilemenu.js"></script>
 </body>
 </html>

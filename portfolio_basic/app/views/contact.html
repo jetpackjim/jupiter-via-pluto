@@ -1,21 +1,49 @@
-<div class="header">
-  <h3 class="text-muted">Contact</h3>
-</div>
+<div class="innerpage">
+  <section class="workpage">
+    <!-- <div class="row">
+      <div class="col-12 leftbox email">
+        <h3>Send me an email</h3>
+      </div>
+      <div ng-controller="ContactCtrl">
+        <div class="alert alert-error" ng-show="httpError">
+          <button class="close" data-dismiss="alert">x</button>
+          <strong>Error! </strong>
+          An Error occured trying to send message, please contact administrator at admin@charlestoncodes.com
+        </div>
+        <div class="alert alert-success" ng-show="success">
+          <button class="close" data-dismiss="alert">x</button>
+          <strong>Success! </strong>
+          Thank you for sending your message, we will contact you shortly!
+        </div>
+        <form name="contactForm">
+          <div class="control-group" ng-class="{error: contactForm.name.$invalid}">
+            <label>Full Name</label>
+            <input class="span4" type="text" name="name" ng-model="msg.name" required="required" placeholder="Your Name" />
+            <span class="help-inline" ng-show="contactForm.name.$error.required">Required</span>
+          </div>
+          <div class="control-group" ng-class="{error: contactForm.email.$invalid}">
+            <label>Email</label>
+            <input class="span4" type="email" name="email" ng-model="msg.email" required="required" placeholder="you@email.com" />
+            <span class="help-inline" ng-show="contactForm.email.$error.required">Required</span>
+            <span class="help-inline" ng-show="contactForm.email.$error.email">Not a Email</span>
+          </div>
+          <div class="control-group" ng-class="{error: contactForm.message.$invalid}">
+            <label>Message</label>
+            <textarea class="span4" rows="5" name="message" ng-model="msg.body" required="required"></textarea>
+            <span class="help-inline" ng-show="contactForm.message.$error.required">Required</span>
+          </div>
+          <button class="btn btn-primary btn-large" ng-click="send()" ng-disabled="contactForm.$invalid">Send</button>
+        </form>
+    </div> -->
 
-<section class="jumbotron">
-  <div class="row">
-    <div class="col-12">
-      <div class="homedesc">
-        <div id="developer" class="desc">
-          <h1>develop</h1>
-          <p>Versatile web, app and game developer with a passion for using the latest cutting edge technologies.</p>
-        </div>
-        <div id="coder" class="desc">
-          <h1>code()</h1>
-          <p>{ Love getting hands on the keyboard to write well structured, clean and efficient code }</p>
-        </div>
+    <div class="row">
+      <div class="col-12 leftbox desc">
+        <h1 class="contactme">contact me</h1>
+        <ul class="contactlist">        
+          <li><a href="http://uk.linkedin.com/pub/andrew-morris/2/188/580/" class="linkedin"><img src="./images/linkedin.png" width="32" height="32">  Join me on linkedIn</a></li>
+          <li><a href="mailto:amorris.home@gmail.com" class="emailme"><img src="./images/email_logo.png" width="32" height="32">  email me</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
+</div>
